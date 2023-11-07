@@ -59,7 +59,7 @@ export class AppComponent {
     phone:''
   }
 
-  public scrollTo(target: HTMLElement) {
+  public scrollTo(target: HTMLElement): void {
     target.scrollIntoView({behavior: "smooth"});
   }
   public addToCard(product: ProductType, target: HTMLElement): void {
@@ -70,7 +70,6 @@ export class AppComponent {
   showPresent = true;
 
   phone = '+375 (29) 368-98-68';
-
   public instagram = {
     image:'insta.png',
     description:'Мы в Instagram'

@@ -58,6 +58,7 @@ html {
       list-style: none;
       width: 320px;
       cursor: pointer;
+      color: rgb(255, 255, 255);
 
       a {
         text-decoration: none;
@@ -76,13 +77,13 @@ html {
     }
   }
 
-  .phone {
-    font-size: 16px;
-    font-family: GilroyBold, sans-serif;
-    color: rgb(255, 255, 255);
-    font-weight: bold;
-    text-align: left;
-  }
+}
+.phone {
+  font-size: 16px;
+  font-family: GilroyBold, sans-serif;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  text-align: left;
 }
 
 .main {
@@ -213,7 +214,7 @@ html {
         font-size: 18px;
         font-family: Gilroy, sans-serif;
         color: rgb(51, 25, 7);
-        width: 370px;
+        //width: 370px;
         padding-top: 30px;
       }
     }
@@ -235,8 +236,8 @@ html {
   cursor: pointer;
 
   .number {
-    width: 50px;
-    height: 56px;
+    width: 68px;
+    height: 68px;
     padding: 20px 14px 0 14px;
     border-radius: 50%;
     background-color: rgb(130, 19, 40);
@@ -513,8 +514,8 @@ footer {
   border: 2px solid rgb(119, 10, 29);
   border-radius: 10px;
   background-color: rgb(254, 239, 238);
-  width: 149px;
-  height: 32px;
+  width: 200px;
+  height: 63px;
   padding: 10px 9px;
   opacity: 0;
   transform: translateY(100%);
@@ -590,35 +591,46 @@ footer {
   display: none;
 }
 
-
 @media screen and (max-width: 1198px) {
-  .info {
+  .block .container .info {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
     justify-items: center;
+    padding-top: 0px;
+  }
 
-    .info-more {
-      margin-right: auto;
-      padding-bottom: 40px;
+  .block .container .info .info-more {
+    margin-right: auto;
+    padding-bottom: 40px;
+    text-align: center;
+  }
 
-      .info-name {
-        text-align: center;
-        margin: 0 140px 0 140px;
-      }
+  .block .container .info .info-name {
+    text-align: center;
+    //margin: 0 140px 0 140px;
+    margin: 0 auto;
+    padding-bottom: 0;
+  }
 
-      .info-text {
-        width: auto;
-        margin: 0 50px 0 50px;
-        text-align: center;
-      }
-    }
+  .block .container .info .info-text {
+    width: auto;
+    margin: 0 50px 0 50px;
+    text-align: center;
+    padding-bottom: 0;
+  }
+  .block .container .info .info-image {
+    padding-top: 0;
   }
 
   .menu-products {
     margin-top: 80px;
     grid-gap: 135px 35px;
     justify-content: center;
+  }
+
+  .menu .menu-products .menu-product {
+    margin-bottom: 48px;
   }
 
   .strawberry-second {
@@ -633,16 +645,18 @@ footer {
 }
 
 @media screen and (max-width: 1057px) {
-
+  .block .container .about {
+    display: flex;
+    flex-direction: column;
+  }
+  .main-image {
+    position: absolute;
+    left: 160px;
+    bottom: 64px;
+  }
 
   .main {
     padding-bottom: 420px;
-
-    .main-image {
-      position: absolute;
-      left: 160px;
-      bottom: 64px;
-    }
   }
 
   .strawberry-second {
@@ -651,45 +665,36 @@ footer {
 
   .order {
     justify-content: space-between;
-
-    img {
-      margin-right: 40px;
-    }
   }
 
+  .order img {
+    margin-right: 40px;
+  }
 }
 
 @media screen and (max-width: 900px) {
-
-
   .order img {
     margin-right: 20px;
   }
 }
-
 @media screen and (max-width: 850px) {
-  .menu {
-    .menu-products {
-      grid-gap: 88px;
-    }
-  }
 
   .order {
     justify-content: space-between;
     flex-direction: row-reverse;
     align-items: end;
     padding: 100px 0 100px 20px;
+  }
 
-    img {
-      margin-right: auto;
-      background-size: contain;
-      width: 356px;
-      height: 400px;
-    }
+  .order img {
+    margin-right: auto;
+    background-size: contain;
+    width: 356px;
+    height: 400px;
+  }
 
-    .order-description h1 {
-      font-size: 38px;
-    }
+  .order-description h1 {
+    font-size: 38px;
   }
 
   .strawberry {
@@ -702,44 +707,40 @@ footer {
     right: 57px;
   }
 
+
+
 }
 
 @media screen and (max-width: 768px) {
-  .header {
-    .phone {
-      display: none;
-    }
+  .header .phone {
+    display: none;
   }
+
 
   .advantages {
     text-align: center;
-    .number {
-      margin: 0 auto;
-    }
-    .advantages-text {
-      h2 {
-
-        text-align: center;
-        font-size: 18px;
-      }
-    }
   }
+
+  .number {
+    margin: 0 auto;
+  }
+
+  .advantages .advantages-text h2 {
+    text-align: center;
+    font-size: 18px;
+  }
+
 }
 
 @media screen and (max-width: 716px) {
+  .order img {
+    display: none;
+  }
 
   .order {
     justify-content: center;
-    img {
-      display: none;
-    }
-    .order-action {
-      .button {
-
-        width: 346px;
-      }
-    }
   }
+
   .strawberry {
     left: 430px;
 
@@ -754,6 +755,10 @@ footer {
     width: 346px;
   }
 
+  .order-action .button {
+    width: 346px;
+  }
+
   .main-image {
     align-items: center;
   }
@@ -765,45 +770,59 @@ footer {
   }
 }
 
+@media screen and (max-width: 699px) {
+  .main-image {
+    left: 100px
+  }
+}
+
 @media screen and (max-width: 646px) {
   .main {
     padding-top: 65px;
     padding-bottom: 292px;
+  }
 
-    .main-text {
-      text-align: center;
-
-      .main-name {
-        font-size: 32px;
-      }
-
-      .main-text-info {
-        margin: 0 auto;
-        font-size: 18px;
-      }
-    }
-
-    .main-image {
-      align-items: center;
-
-      img {
-        margin-right: auto;
-        background-size: contain;
-        width: 259px;
-        height: 215px;
-      }
-
-    }
-
-    .info-name {
-      margin: 0 auto;
-      font-size: 30px;
-    }
+  .main-text {
+    text-align: center;
 
   }
+
+  .main-name {
+    font-size: 32px;
+  }
+
+  .main-text-info {
+    margin: 0 auto;
+    font-size: 18px;
+  }
+
+  .main-image {
+    align-items: center;
+  }
+
+  .main-image img {
+    margin-right: auto;
+    background-size: contain;
+    width: 259px;
+    height: 215px;
+
+  }
+
+  .info-name {
+    margin: 0 auto;
+    font-size: 30px;
+  }
+
 }
 
 @media screen and (max-width: 560px) {
+  .main .main-text .main-name {
+    font-size: 28px;
+  }
+
+  .block .about .info-more  .info-name {
+    font-size: 28px;
+  }
   .advantages {
     grid-template-columns: repeat(auto-fill, 164px);
     grid-row-gap: 85px;
@@ -820,59 +839,88 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    .main-image {
-      left: auto;
-    }
   }
 
+  .main-image {
+    left: auto;
+  }
 
+  .block .container .info .info-image {
+    padding-top: 0;
+  }
+  .block .container .info .info-more {
+    padding-bottom: 0;
+  }
+
+  /* padding-top: 26px;
+   padding-bottom: 37px;
+}
+
+/*  .main-text {
+   text-align: center;
+   padding-bottom: 90px;
+}
+
+.main-text-info {
+   margin: 0 auto;
+   text-align: center;
+   font-size: 16px;
+   padding-top: 26px
+}
+
+.main-name {
+   font-size: 32px;
+   text-align: center;
+} */
   .button {
     margin-top: 37px;
+
   }
 
   .info {
     text-align: center;
     padding-top: 100px;
 
-    .info-text {
-      padding-top: 0;
-      font-size: 16px;
-      margin: 0 auto;
-    }
-
-    .info-image {
-      img {
-        background-size: contain;
-        width: 300px;
-        height: 187px;
-      }
-    }
   }
+
+
+  .info-image img {
+    background-size: contain;
+    width: 300px;
+    height: 187px;
+  }
+
+  .info-text {
+    padding-top: 0;
+    font-size: 16px;
+    margin: 0 auto;
+  }
+
+
+  .menu h1 {
+    font-size: 30px;
+
+  }
+
   .advantages {
     grid-template-columns: repeat(auto-fill, 162px);
     grid-row-gap: 85px;
     grid-column-gap: 15px;
     margin-top: 0;
     padding-bottom: 77px;
-
-    .advantages-description {
-      font-size: 13px;
-    }
   }
 
+  .advantages-description {
+    font-size: 13px;
+  }
 
   .menu {
     padding-top: 82px;
     padding-bottom: 82px;
+  }
 
-    h1 {
-      font-size: 30px;
-    }
-
-    .menu-products {
-      margin-top: 121px;
-    }
+  .menu-products {
+    margin-top: 121px;
   }
 
   .order {
@@ -882,23 +930,556 @@ footer {
   .footer {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
-
-    .socials {
-      grid-row: auto;
-      grid-column: auto;
-      order: 3;
-    }
-
-    .phone {
-      text-align: center;
-    }
-
-    .rules {
-      text-align: center;
-    }
   }
 
   .logo {
     text-align: center;
   }
+
+  .socials {
+    grid-row: auto;
+    grid-column: auto;
+    order: 3;
+  }
+
+  .footer .phone {
+    text-align: center;
+  }
+
+  .rules {
+    text-align: center;
+  }
+
+
+  .navigation {
+    display: none;
+  }
+
+  .navigation {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    top: 0;
+    left: 0;
+    background: #000000c9;
+    z-index: 3;
+  }
+
+  .navigation ul {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 100px;
+    width: auto;
+  }
+
+  .navigation ul li {
+    margin: 15px 0;
+  }
+
+  .navigation ul li a {
+    font-size: 25px;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  .burger svg {
+    width: 36px;
+    height: 36px;
+    fill: rgb(119, 11, 29);
+  }
+
+
+  .navigation.open {
+    display: block;
+    align-items: center;
+  }
+
+  .navigation .close {
+    display: block;
+    width: 24px;
+    height: 24px;
+    fill: rgb(119, 11, 29);
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+
 }
+
+@media screen and (max-width: 507px) {
+  .strawberry {
+    top: 227px;
+    left: 363px;
+  }
+}
+
+@media screen and (max-width: 442px) {
+  .strawberry {
+    top: 227px;
+    left: 286px;
+  }
+
+}
+
+@media screen and (max-width: 388px) {
+  .main-text-info {
+    width: auto;
+  }
+
+  .info-image img {
+    width: 270px;
+    height: 172px;
+  }
+
+  .advantages {
+    grid-template-columns: repeat(auto-fill, 134px);
+  }
+
+  .order-description h1 {
+    font-size: 30px;
+  }
+
+}
+
+@media screen and (max-width: 578px) {
+  .main-name {
+    font-size: 28px;
+  }
+}
+
+@media screen and (max-width: 373px) {
+  .input {
+    width: 286px;
+  }
+
+  .order-action .button {
+    width: 286px;
+  }
+
+  .strawberry {
+    display: none;
+  }
+
+}
+
+
+
+//
+//@media screen and (max-width: 1198px) {
+//  .info {
+//    display: grid;
+//    grid-template-columns: 1fr;
+//    grid-template-rows: 1fr 1fr;
+//    justify-items: center;
+//
+//    .info-more {
+//      margin-right: auto;
+//      padding-bottom: 40px;
+//
+//      .info-name {
+//        text-align: center;
+//        margin: 0 140px 0 140px;
+//      }
+//
+//      .info-text {
+//        width: auto;
+//        margin: 0 50px 0 50px;
+//        text-align: center;
+//      }
+//    }
+//  }
+//
+//  .menu-products {
+//    margin-top: 80px;
+//    grid-gap: 135px 35px;
+//    justify-content: center;
+//  }
+//
+//  .strawberry-second {
+//    right: 100px;
+//  }
+//}
+//
+//@media screen and (max-width: 1171px) {
+//  .about {
+//    padding-top: 50px;
+//  }
+//  .advantages {
+//    grid-gap: 20px;
+//  }
+//}
+//
+//@media screen and (max-width: 1057px) {
+//
+//  .about {
+//    display: flex;
+//    flex-direction: column;
+//  }
+//
+//  .main {
+//    padding-bottom: 420px;
+//
+//    .main-image {
+//      position: absolute;
+//      left: 160px;
+//      bottom: 64px;
+//    }
+//  }
+//
+//  .strawberry-second {
+//    right: 57px;
+//  }
+//
+//  .order {
+//    justify-content: space-between;
+//
+//    img {
+//      margin-right: 40px;
+//    }
+//  }
+//
+//}
+//
+//@media screen and (max-width: 900px) {
+//
+//
+//  .order img {
+//    margin-right: 20px;
+//  }
+//}
+//
+//@media screen and (max-width: 850px) {
+//  .menu {
+//    .menu-products {
+//      grid-gap: 88px;
+//    }
+//  }
+//
+//  .order {
+//    justify-content: space-between;
+//    flex-direction: row-reverse;
+//    align-items: end;
+//    padding: 100px 0 100px 20px;
+//
+//    img {
+//      margin-right: auto;
+//      background-size: contain;
+//      width: 356px;
+//      height: 400px;
+//    }
+//
+//    .order-description h1 {
+//      font-size: 38px;
+//    }
+//  }
+//
+//  .strawberry {
+//    top: 339px;
+//    left: 376px;
+//  }
+//
+//  .strawberry-second {
+//    top: 212px;
+//    right: 57px;
+//  }
+//
+//}
+//
+//@media screen and (max-width: 768px) {
+//  .header {
+//    .phone {
+//      display: none;
+//    }
+//  }
+//
+//  .advantages {
+//    text-align: center;
+//    .number {
+//      margin: 0 auto;
+//    }
+//    .advantages-text {
+//      h2 {
+//
+//        text-align: center;
+//        font-size: 18px;
+//      }
+//    }
+//  }
+//}
+//
+//@media screen and (max-width: 716px) {
+//
+//  .order {
+//    justify-content: center;
+//    img {
+//      display: none;
+//    }
+//    .order-action {
+//      .button {
+//
+//        width: 346px;
+//      }
+//    }
+//  }
+//  .strawberry {
+//    left: 430px;
+//
+//  }
+//
+//  .strawberry-second {
+//    display: none;
+//  }
+//
+//
+//  .input {
+//    width: 346px;
+//  }
+//
+//  .main-image {
+//    align-items: center;
+//  }
+//
+//  @media screen and (max-width: 699px) {
+//    .main-image {
+//      left: 100px
+//    }
+//  }
+//}
+//
+//@media screen and (max-width: 646px) {
+//  .main {
+//    padding-top: 65px;
+//    padding-bottom: 292px;
+//
+//    .main-text {
+//      text-align: center;
+//
+//      .main-name {
+//        font-size: 32px;
+//      }
+//
+//      .main-text-info {
+//        margin: 0 auto;
+//        font-size: 18px;
+//      }
+//    }
+//
+//    .main-image {
+//      align-items: center;
+//
+//      img {
+//        margin-right: auto;
+//        background-size: contain;
+//        width: 259px;
+//        height: 215px;
+//      }
+//
+//    }
+//
+//    .info-name {
+//      margin: 0 auto;
+//      font-size: 30px;
+//    }
+//
+//  }
+//}
+//
+//@media screen and (max-width: 560px) {
+//  .block .info {
+//    padding-top: 30px;
+//  }
+//
+//  .block .info .info-more .info-name {
+//    font-size: 32px;
+//    margin: 0 50px 0 50px;;
+//    max-width: 370px;
+//    text-align: center;
+//  }
+//
+//  .block .info .info-more .info-text {
+//    padding-top: 0;
+//  }
+//  .advantages {
+//    grid-template-columns: repeat(auto-fill, 164px);
+//    grid-row-gap: 85px;
+//    grid-column-gap: 15px;
+//    margin-top: 0;
+//    padding-bottom: 77px;
+//  }
+//
+//}
+//
+//@media screen and (max-width: 532px) {
+//  .main {
+//    margin-right: auto;
+//    flex-direction: column;
+//    justify-content: center;
+//    align-items: center;
+//
+//    .main-image {
+//      left: auto;
+//    }
+//  }
+//
+//
+//  .button {
+//    margin-top: 37px;
+//  }
+//
+//  .info {
+//    text-align: center;
+//    padding-top: 100px;
+//  }
+//    .info-text {
+//      padding-top: 0;
+//      font-size: 16px;
+//      margin: 0 auto;
+//    }
+//
+//  .block .info .info-image img{
+//      background-size: contain;
+//        width: 300px;
+//        height: 187px;
+//
+//    }
+//
+//  .advantages {
+//    grid-template-columns: repeat(auto-fill, 162px);
+//    grid-row-gap: 85px;
+//    grid-column-gap: 15px;
+//    margin-top: 0;
+//    padding-bottom: 77px;
+//
+//    .advantages-description {
+//      font-size: 13px;
+//    }
+//  }
+//
+//
+//  .menu {
+//    padding-top: 82px;
+//    padding-bottom: 82px;
+//
+//    h1 {
+//      font-size: 30px;
+//    }
+//
+//    .menu-products {
+//      margin-top: 121px;
+//    }
+//  }
+//
+//  .order {
+//    padding-left: 10px;
+//  }
+//
+//  .footer {
+//    grid-template-columns: 1fr;
+//    grid-template-rows: 1fr 1fr 1fr 1fr;
+//
+//    .socials {
+//      grid-row: auto;
+//      grid-column: auto;
+//      order: 3;
+//    }
+//
+//    .phone {
+//      text-align: center;
+//    }
+//
+//    .rules {
+//      text-align: center;
+//    }
+//  }
+//
+//  .logo {
+//    text-align: center;
+//  }
+//}
+//
+//@media screen and (max-width: 507px) {
+//  .main {
+//    padding-top: 0;
+//  }
+//  .strawberry {
+//    top: 227px;
+//    left: 363px;
+//  }
+//  .block .info .info-image img {
+//    width: 270px;
+//    height: 172px;
+//  }
+//}
+//
+//@media screen and (max-width: 442px) {
+//  .block .info .info-more .info-name {
+//    font-size: 24px;
+//    margin: 0 30px 0 30px;
+//    max-width: 200px;
+//    text-align: center;
+//  }
+//
+//  .block .info .info-more .info-text {
+//    font-size: 16px;
+//    margin: 0 30px 0 30px;
+//    text-align: center;
+//
+//  }
+//
+//  .strawberry {
+//    top: 227px;
+//    left: 286px;
+//  }
+//
+//}
+//@media screen and (max-width: 388px) {
+//  .main-text-info {
+//    width: auto;
+//  }
+//
+//  .block .info .info-image img {
+//    width: 270px;
+//    height: 172px;
+//  }
+//
+//  .advantages {
+//    grid-template-columns: repeat(auto-fill, 134px);
+//  }
+//
+//}
+//
+//
+//@media screen and (max-width: 373px) {
+//  .main {
+//    padding-top: 0;
+//  }
+//  .main-name {
+//    font-size: 16px;
+//    max-width: 300px;
+//  }
+//
+//  .main-text-info {
+//    max-width: 250px;
+//  }
+//  .input {
+//    width: 286px;
+//  }
+//
+//  .order-action .button {
+//    width: 286px;
+//  }
+//
+//  .strawberry {
+//    display: none;
+//  }
+//  .order-description h1 {
+//    font-size: 37px;
+//  }
+//
+//}
+//
+

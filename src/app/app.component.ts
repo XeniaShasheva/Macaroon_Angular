@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import {ProductType} from "./types/product.type";
+import {AdvantagesType} from "./types/advantages.type";
+import {FormValueType} from "./types/form-value.type";
+import {InstagrammType} from "./types/instagramm.type";
 
 @Component({
   selector: 'app-root',
@@ -7,30 +10,26 @@ import {ProductType} from "./types/product.type";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
- public advantages =[
+ public advantages: AdvantagesType [] =[
    {
-     point:1,
      title:'Лучшие продукты',
      description:'Мы честно готовим макаруны только из натуральных и качественных продуктов. Мы не используем консерванты, ароматизаторы и красители'
    },
    {
-     point:2,
      title:'Много вкусов',
      description:'Наша задача - предоставить вам широкое разнообразие вкусов. Вы удивитесь, но у нас более 70 вкусов пироженок.'
    },
    {
-     point:3,
      title:'Бисквитное тесто',
      description:'Все пирожные готовятся на бисквитном тесте с качественным сливочным маслом 85,5%. В составе нет маргарина и дрожей.'
    },
    {
-     point:4,
      title:'Честный продукт',
      description:'Вкус, качество и безопасность наших пирогов подтверждена декларацией о соотвествии, которую мы получили 22.06.2016г.'
    }
  ];
 
-  public products = [
+  public products: ProductType[] = [
     {
       image: '1.png',
       title: 'Макарун с малиной',
@@ -53,10 +52,10 @@ export class AppComponent {
     },
   ];
 
-  public formValue = {
+  public formValue: FormValueType = {
     productTitle:'',
     name:'',
-    phone:''
+    phone: ''
   }
 
   public scrollTo(target: HTMLElement): void {
@@ -67,12 +66,34 @@ export class AppComponent {
     this.formValue.productTitle = product.title.toUpperCase();
   }
 
-  showPresent = true;
+  showPresent: boolean = true;
 
   phone = '+375 (29) 368-98-68';
-  public instagram = {
+  public instagram: InstagrammType = {
     image:'insta.png',
     description:'Мы в Instagram'
   }
+
+  public createOrder() {
+    if(!this.formValue.productTitle) {
+      alert('Выберите макарун!');
+      return;
+    }
+    if(!this.formValue.name) {
+      alert('Заполните имя!');
+      return;
+    }
+    if(!this.formValue.phone) {
+      alert('Заполните номер телефона!');
+      return;
+    }
+    alert('Спасибо за заказ!');
+    this.formValue = {
+      productTitle:'',
+      name:'',
+      phone: ''
+    }
+  };
+
 
 }

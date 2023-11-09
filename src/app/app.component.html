@@ -82,7 +82,7 @@
       </div>
       <div class="advantages">
         <div class="advantages-text" *ngFor="let advantage of advantages; let i = index">
-          <div class="number">{{advantage.point}}</div>
+          <div class="number">{{i + 1}}</div>
           <h2>{{advantage.title}}</h2>
           <div class="advantages-description">{{advantage.description}}
           </div>
@@ -127,7 +127,7 @@
           <div class="choice">Заполните данные для заказа</div>
           <input class="input" type="text" placeholder="Ваше имя" required [(ngModel)]="formValue.name">
           <input class="input" type="tel" placeholder="+375 (___) ___-__-__" required [(ngModel)]="formValue.phone">
-          <button class="button">Оформите заказ</button>
+          <button class="button" (click)="createOrder()">Оформите заказ</button>
         </div>
       </div>
     </div>
@@ -156,7 +156,7 @@
 
 <div class="present-content" >
   <div class="present-text">Оформите заказ <br> и получите подарок!</div>
-  <div class="present" *ngIf="showPresent === true">
+  <div class="present" *ngIf="showPresent">
     <a href="#">
       <img src="assets/images/present.png" alt="Present">
     </a>

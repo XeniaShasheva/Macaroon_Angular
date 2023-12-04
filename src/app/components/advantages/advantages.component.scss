@@ -1,0 +1,50 @@
+.advantages {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 220px);
+    grid-template-rows: 1fr;
+    margin-top: 90px;
+    padding-bottom: 125px;
+    grid-gap: 85px;
+    justify-content: center;
+    cursor: pointer;
+}
+    .number {
+      width: 68px;
+      height: 68px;
+      padding: 20px 14px 0 14px;
+      border-radius: 50%;
+      background-color: rgb(130, 19, 40);
+      text-align: center;
+      font-size: 60px;
+      font-family: GilroyExtraBold, sans-serif;
+      color: rgb(255, 255, 255);
+    }
+  
+    .advantages-text {
+      &:hover {
+        .number {
+          background-color: #eba8b1;
+          color: rgb(130, 19, 40);
+          transition: 0.5s;
+        }
+      }
+  
+      
+  
+      
+    }
+    h2 {
+        font-size: 20px;
+        font-family: GilroyExtraBold, sans-serif;
+        color: rgb(51, 25, 7);
+        text-align: left;
+        padding-top: 10px;
+        padding-bottom: 15px;
+      }
+  
+  .advantages-description {
+        font-size: 15px;
+        font-family: GilroyMedium, sans-serif;
+        color: rgb(51, 25, 7);
+        line-height: 1.333;
+      }

@@ -234,46 +234,46 @@ html {
   grid-gap: 85px;
   justify-content: center;
   cursor: pointer;
-
-  .number {
-    width: 68px;
-    height: 68px;
-    padding: 20px 14px 0 14px;
-    border-radius: 50%;
-    background-color: rgb(130, 19, 40);
-    text-align: center;
-    font-size: 60px;
-    font-family: GilroyExtraBold, sans-serif;
-    color: rgb(255, 255, 255);
-  }
-
-  .advantages-text {
-    &:hover {
-      .number {
-        background-color: #eba8b1;
-        color: rgb(130, 19, 40);
-        transition: 0.5s;
-      }
-    }
-
-    h2 {
-      font-size: 20px;
-      font-family: GilroyExtraBold, sans-serif;
-      color: rgb(51, 25, 7);
-      text-align: left;
-      padding-top: 10px;
-      padding-bottom: 15px;
-    }
-
-    .advantages-description {
-      font-size: 15px;
-      font-family: GilroyMedium, sans-serif;
-      color: rgb(51, 25, 7);
-      line-height: 1.333;
-    }
-  }
-
 }
+//   .number {
+//     width: 68px;
+//     height: 68px;
+//     padding: 20px 14px 0 14px;
+//     border-radius: 50%;
+//     background-color: rgb(130, 19, 40);
+//     text-align: center;
+//     font-size: 60px;
+//     font-family: GilroyExtraBold, sans-serif;
+//     color: rgb(255, 255, 255);
+//   }
+
+//   .advantages-text {
+//     &:hover {
+//       .number {
+//         background-color: #eba8b1;
+//         color: rgb(130, 19, 40);
+//         transition: 0.5s;
+//       }
+//     }
+
+//     h2 {
+//       font-size: 20px;
+//       font-family: GilroyExtraBold, sans-serif;
+//       color: rgb(51, 25, 7);
+//       text-align: left;
+//       padding-top: 10px;
+//       padding-bottom: 15px;
+//     }
+
+//     .advantages-description {
+//       font-size: 15px;
+//       font-family: GilroyMedium, sans-serif;
+//       color: rgb(51, 25, 7);
+//       line-height: 1.333;
+//     }
+//   }
+
+// }
 
 
 .menu {
@@ -546,6 +546,16 @@ footer {
   }
 }
 
+.present-number {
+  border-radius: 50%;
+  background-color: #feefee;
+  width: 20px;
+  height: 20px;
+  border: 1px solid rgb(113, 8, 30);
+  margin-bottom: 70px;
+  text-align: center;
+}
+
 .present-content {
   .present-text {
     position: fixed;
@@ -565,6 +575,12 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  .present a img{
+    width: 50px;
+    height: 50px;
+    // padding-right: 5px;
   }
 
   &:hover {
@@ -629,9 +645,9 @@ footer {
     justify-content: center;
   }
 
-  .menu .menu-products .menu-product {
-    margin-bottom: 48px;
-  }
+  // .menu .menu-products .menu-product {
+  //   margin-bottom: 48px;
+  // }
 
   .strawberry-second {
     right: 100px;

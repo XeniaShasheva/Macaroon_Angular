@@ -44,7 +44,7 @@
           </li>
         </ul>
       </nav>
-      <div class="phone">{{phone}}</div>
+      <div class="phone">{{phone | phoneDescription}}</div>
     </header>
   </div>
   <div class="container">
@@ -54,7 +54,7 @@
         <div class="main-text-info">
           Побалуйте себя и своих близких самыми вкусными и ароматными домашними пироженками Macaroons!
         </div>
-        <button class="button" (click)="scrollTo(macaroons)">
+        <button class="button" appButton (click)="scrollTo(macaroons)">
           Выбрать макарун</button>
       </div>
       <div class="main-image">
@@ -81,28 +81,25 @@
         </div>
       </div>
       <div class="advantages">
-        <div class="advantages-text" *ngFor="let advantage of advantages; let i = index">
-          <div class="number">{{i + 1}}</div>
-          <h2>{{advantage.title}}</h2>
-          <div class="advantages-description">{{advantage.description}}
-          </div>
-        </div>
+      <advantages *ngFor = "let advantage of advantages" [advantage]="advantage"></advantages>
 
-      </div>
-    </div>
+        
+       <!-- <div class="advantages-text" *ngFor="let advantage of advantages; let i = index"> -->
+      <!-- <div class="number">{{i + 1}}</div> -->
+          <!-- <h2>{{advantage.title}}</h2> -->
+          <!-- <div class="advantages-description">{{advantage.description | advantagesDescription}}</div> -->
+        <!-- </div> -->
+
+      </div> 
+    </div> 
   </div>
   <div class="container">
     <div class="menu" id="macaroons">
       <h1 #macaroons>Выберите свой макарун</h1>
       <div class="menu-products">
-        <div class="menu-product" *ngFor="let product of products">
-          <img src="assets/images/{{product.image}}" alt="Macaroon1">
-          <h2>{{product.title}}</h2>
-          <div class="action">
-            <div class="price">{{product.price}}</div>
-            <button class="button" (click)="addToCard(product, order)">Заказать</button>
-          </div>
-        </div>
+
+        <product *ngFor="let product of products" [product]="product"(addToCartEvent)="addToCard($event, order)"></product>
+     
       </div>
     </div>
   </div>
@@ -126,8 +123,8 @@
         <div class="order-action">
           <div class="choice">Заполните данные для заказа</div>
           <input class="input" type="text" placeholder="Ваше имя" required [(ngModel)]="formValue.name">
-          <input class="input" type="tel" placeholder="+375 (___) ___-__-__" required [(ngModel)]="formValue.phone">
-          <button class="button" (click)="createOrder()">Оформите заказ</button>
+          <input class="input" type="tel" placeholder="+375(__)___-__-__" required [(ngModel)]="formValue.phone">
+          <button class="button" appButton (click)="createOrder()">Оформите заказ</button>
         </div>
       </div>
     </div>
@@ -148,17 +145,18 @@
         <img src="assets/images/{{instagram.image}}" alt="Insta">
         <div>{{instagram.description}}</div>
       </div>
-      <div class="phone">{{phone}}</div>
+      <div class="phone">{{phone | phoneDescription}}</div>
     </div>
   </div>
 </footer>
 
 
 <div class="present-content" >
-  <div class="present-text">Оформите заказ <br> и получите подарок!</div>
+  <div class="present-text">{{cartService.allPrice}} руб.</div>
   <div class="present" *ngIf="showPresent">
     <a href="#">
-      <img src="assets/images/present.png" alt="Present">
-    </a>
+      <img src="assets/images/cart.png" alt="Present">
+        </a>
+    <div class="present-number">{{cartService.count}}</div>
   </div>
 </div>

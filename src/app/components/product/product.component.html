@@ -1,0 +1,9 @@
+<div class="menu-product">
+    <img src="assets/images/{{product.image}}" alt="Macaroon1">
+    <h2>{{product.title}}</h2>
+    <div class="action">
+      <div class="price">1 шт. {{product.price | currency : 'руб.'}}</div>
+      <button class="button" appButton (click) = "addProductToCart(product)">Заказать</button>
+    </div>
+  </div>
+<!-- (click)="addToCard(product, order)"  -->
